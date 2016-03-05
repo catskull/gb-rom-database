@@ -1,4 +1,6 @@
 body {
   font-family:"Arial";
-  font-size:x-small
+  font-size: x-small;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
