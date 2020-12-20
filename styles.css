@@ -1,6 +1,11 @@
-body {
-  font-family:"Arial";
-  font-size: x-small;
-  padding-left: 10rem;
-  padding-right: 10rem;
+body
+{
+    font-family: "Arial", sans-serif;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+/* fix search field and pagination control alignment... */
+.dataTables_filter, .dataTables_paginate
+{
+    float: right;
 }
