@@ -1,34 +1,38 @@
-<html><head>
-	<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+		<!-- JQuery 2 -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="all" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" media="all" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- DataTables -->
+		<!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" media="all" integrity="sha384-XVHNoSVVnIfu4RRRsj+h8t6p+8o+eq87kb7Abav9bxpX9nNibXFocxhyLbi8/g1U" crossorigin="anonymous">-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css" media="all" integrity="sha384-N+tuedKspz1GrGIPPPvwl/UT91h5S9RcRR0xF34k9juG0Zgip1dQF4lFr48OIStI" crossorigin="anonymous">
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" integrity="sha384-jpja9xMWIcsZ+0VkgustW4IQr7i0cTKXJ4/kDiXJ3YXo/SB//0nkWcPcLIfK2Ie0" crossorigin="anonymous"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js" integrity="sha384-x3JHxzsY1DXUN6Q0LhobGCdDXZj6jRz5GEdDa9L4+j+LHcibOtfUA+XEX/PX+7SZ" crossorigin="anonymous"></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css" media="all">
+		<script type="text/javascript" src="scripts.js"></script>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
-	<title>GAME LIST</title>
-	<meta name="CHANGEDBY" content="David Pello">
-</head>
-
+		<title>Nintendo Gameboy Game List</title>
+		<meta name="CHANGEDBY" content="David Pello">
+	</head>
 <body>
-<h2>This is list is derived entirely from <a href="http://www.ladecadence.net/trastero/listado%20juegos%20gameboy.html">this list</a>.</h2>
-<h2>If you have corrections or additions, please <a href="https://github.com/catskull/gb-rom-database">submit a pull request</a>.</h2>
-<table class="table table-striped table-hover">
+<h1>Nintendo Gameboy Game List</h1>
+<p class="h2">This list is derived entirely from <a href="http://www.ladecadence.net/trastero/listado%20juegos%20gameboy.html">this list</a>.</p>
+<p class="h2">If you have corrections or additions, please <a href="https://github.com/catskull/gb-rom-database">submit a pull request</a>.</p>
+<table class="table table-striped table-hover table-bordered">
 	<thead>
 		<tr>
 			<th>ROM Name</th>
-			<th>Rom (Kbit)</th>
-			<th>RAM(Kbit)</th>
-			<th>Cartridge type</th>
+			<th>ROM (<a href="https://en.wikipedia.org/wiki/Byte#Units_based_on_powers_of_2" target="_blank" title="Byte - Wikipedia > Units based on powers of 2">KiB</a>)</th>
+			<th>RAM (KiB)</th>
+			<th>Cartridge Type</th>
 			<th>Region</th>
-			<th>File name</th>
+			<th>File Name</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -61817,4 +61821,5 @@
 		</tr>
 	</tbody>
 </table>
-</body></html>
+</body>
+</html>
