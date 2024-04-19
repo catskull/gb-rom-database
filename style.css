@@ -1,0 +1,158 @@
+:root {
+  --main-bg-color: white;
+  --main-color: black;
+  --alt-color: rgba(0, 0, 0, 0.55);
+  --row-highlight: rgba(242, 242, 242, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+  --main-bg-color: black;
+  --main-color: #d7d7d8;
+  --alt-color: rgb(62, 62, 62);
+  --row-highlight: rgb(37, 37, 37);
+}
+
+svg {
+  filter: invert(85%);
+}
+}
+
+
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('https://catskull.net/assets/font/BerkeleyMonoVariable-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Berkeley Mono', sans-serif;
+  margin: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-bottom: 2px dashed;
+  position: relative;
+  min-width: 800px;
+}
+
+.input-icon, #file-stats {
+  position: absolute;
+}
+
+.input-icon {
+  left: 0;
+}
+
+.input-icon input[type=text] {
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  height: 28px;
+  font-size: 1rem;
+  font-family: 'Berkeley Mono', sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+
+.input-icon::before {
+  content: '🔎';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#file-stats {
+  right: 0.5rem;
+  height: 1rem;
+  font-size: 0.9rem;
+}
+
+#header-title {
+  text-align: center;
+}
+
+small {
+  font-size: 0.75rem;
+  color: var(--alt-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: auto;
+  min-width: 800px;
+  margin: 0 auto;
+  border-spacing: 0;
+}
+
+thead tr {
+  border-bottom: 2px solid var(--main-color);
+}
+
+tbody {
+  white-space: nowrap;
+}
+
+th, td {
+  text-align: center;
+}
+
+th {
+  vertical-align: bottom;
+  padding-right: 0.5rem;
+}
+
+tr {
+  height: 30px;
+  transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--row-highlight);
+}
+
+tr > :first-child {
+  padding-left: 0.5rem;
+}
+
+tbody tr:hover, tr:hover {
+  background-color: var(--alt-color) !important;
+}
+
+.left {
+  text-align: left;
+}
+
+.footer-link {
+  position: fixed;
+  bottom: 0.5rem;
+}
+
+.center-flex {
+  display: flex;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  border-top: solid;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
