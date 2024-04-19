@@ -30,7 +30,7 @@
         .then(response => response.json())
           .then(data => {
             this.fuse = new window.Fuse(data, {
-              keys: ['ROM Name', 'File Name']
+              keys: ['File Name']
             })
             this.items = data
           })
