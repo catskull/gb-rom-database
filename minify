@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+file_path = 'games.json'
+data = File.read(file_path)
+
+games = JSON.parse(data)
+
+unique_games = games.uniq { |game| game.sort_by { |key, value| key } }
+
+unique_json = JSON.generate(unique_games)
+
+File.write('games.min.json', unique_json)
