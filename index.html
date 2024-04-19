@@ -47,7 +47,7 @@
 
 <header>
   <div class="input-icon">
-    <input @keydown.window="$el.focus()" type="text" x-model.debounce.50ms="search" placeholder="Start typing..." class="search-input">
+    <input @keydown.window="$el.focus()" autofocus autocomplete="off" type="text" x-model.debounce.50ms="search" placeholder="Start typing..." class="search-input">
   </div>
   <small id="header-title">
     GB ROM DB
