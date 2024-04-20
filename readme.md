@@ -12,9 +12,15 @@ python3 -m http.server
 
 App should be running at [http://localhost:8000](http://localhost:8000)
 
+
 ```bash
 ruby populate-db.rb ~/path/to/No-Intro/
+>> games.json
 ```
+
+I ran `populate-db` on the complete No-Intro rom set and de-duped the results.
+
+There are 4351 unique games in the DB. Some additional work needs to be done to further decode licensee ID's.
 
 ## Contributing
 
@@ -22,7 +28,7 @@ Submit a PR. Mostly looking for data cleanup, acessibility improvments, and bug 
 
 ## Credits
 
-Data inherited from [ladecadence.net](https://web.archive.org/web/20230306213453/http://www.ladecadence.net/trastero/listado%20juegos%20gameboy.html) (archive.org mirror, now offline)
+Old data inherited from [ladecadence.net](https://web.archive.org/web/20230306213453/http://www.ladecadence.net/trastero/listado%20juegos%20gameboy.html) (archive.org mirror, now offline)
 
 [AlpineJS](https://alpinejs.dev)
 
