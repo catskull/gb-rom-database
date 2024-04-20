@@ -12,6 +12,10 @@ python3 -m http.server
 
 App should be running at [http://localhost:8000](http://localhost:8000)
 
+```bash
+ruby populate-db.rb ~/path/to/No-Intro/
+```
+
 ## Contributing
 
 Submit a PR. Mostly looking for data cleanup, acessibility improvments, and bug fixes.
@@ -33,6 +37,10 @@ Data inherited from [ladecadence.net](https://web.archive.org/web/20230306213453
 [Game Boy hardware database](https://gbhwdb.gekkio.fi)
 
 [awesome-gbdev](https://github.com/gbdev/awesome-gbdev)
+
+[Pandocs](https://gbdev.io/pandocs/The_Cartridge_Header.html)
+
+[No-Intro](https://no-intro.org)
 
 ## License
 
