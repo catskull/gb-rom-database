@@ -13,6 +13,7 @@
   <meta property="og:title" content="Nintendo Gameboy Game List">
   <meta property="og:description" content="An interactive database of Nintendo™ Game Boy™ games.">
   <meta property="og:url" content="https://catskull.net/gb-rom-database">
+  <link rel="preload" as="fetch" href="https://catskull.net/gb-rom-database/games.min.json" type="application/json" crossorigin>
   </head>
 <body>
   <div
@@ -30,7 +31,7 @@
         .then(response => response.json())
           .then(data => {
             this.fuse = new window.Fuse(data, {
-              keys: ['File Name']
+              keys: ['name']
             })
             this.items = data
           })
@@ -63,9 +64,9 @@
           ▼ File Name
         </th>
         <th class="left">ROM Name</th>
-        <th>ROM (KiB)</th>
-        <th>RAM (KiB)</th>
-        <th>Cartridge Type</th>
+        <th>ROM</th>
+        <th>RAM</th>
+        <th>Mapper</th>
         <th>Region</th>
       </tr>
     </thead>
@@ -73,15 +74,15 @@
       <template x-if="filteredItems.length > 0">
         <template x-for="(item, index) in filteredItems" :key="Object.values(item).join('-') + '-' + index">
           <tr>
-            <td class="left" x-text="item['File Name']" style="max-width:40vw;overflow-x:auto;white-space:nowrap;"></td>
-            <td class="left" x-text="item['ROM Name']"></td>
-            <td x-text="item['ROM (KiB)']"></td>
-            <td x-text="item['RAM (KiB)']"></td>
-            <td class="center-flex" style="cursor:help;" :title="item['Cartridge Type']">
-              <template x-if="/MBC[0-9]/.test(item['Cartridge Type'])">
+            <td class="left" x-text="item['name']" style="max-width:40vw;overflow-x:auto;white-space:nowrap;"></td>
+            <td class="left" x-text="item['title']"></td>
+            <td x-text="item['rom']"></td>
+            <td x-text="item['ram']"></td>
+            <td class="center-flex" style="cursor:help;" :title="item['mapper']">
+              <template x-if="/MBC[0-9]/.test(item['mapper'])">
                 <svg width="35" height="30" xmlns="http://www.w3.org/2000/svg">
                   <rect x="0" y="5" width="35" height="18" style="fill:none;stroke:black;stroke-width:2px" />
-                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style="fill:black;font-size:12;font-weight:bold;font-style:italic;" x-text="item['Cartridge Type'].match(/MBC[0-9]/)[0]">
+                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style="fill:black;font-size:12;font-weight:bold;font-style:italic;" x-text="item['mapper'].match(/MBC[0-9]/)[0]">
                   </text>
                   <line x1="2.5" y1="0" x2="2.5" y2="5" style="stroke:black;stroke-width:1px"/>
                   <line x1="7.5" y1="0" x2="7.5" y2="5" style="stroke:black;stroke-width:1px"/>
@@ -113,42 +114,42 @@
                   </g>
                 </svg>
               </template>
-              <template x-if="item['Cartridge Type'].includes('ROM ONLY')">
+              <template x-if="item['mapper'].includes('ROM ONLY')">
                 <span>ROM Only</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('MBC7')">
+              <template x-if="item['mapper'].includes('MBC7')">
                 <span style="font-size:1.5rem;">↭</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('Tilt')">
+              <template x-if="item['mapper'].includes('Tilt')">
                 <span style="font-size:1.5rem;">↻</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('Hudson')">
+              <template x-if="item['mapper'].includes('Hudson')">
                 <span style="font-size:1.5rem;">🐝</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('Camera')">
+              <template x-if="item['mapper'].includes('Camera')">
                 <span style="font-size:1.5rem;">📷</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('MMM01')">
+              <template x-if="item['mapper'].includes('MMM01')">
                 <span style="font-size:1.5rem;">🔠</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('Bandai')">
+              <template x-if="item['mapper'].includes('Bandai')">
                 <img height="25" src="data:image/jpeg;base64,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">
               </template>
-              <template x-if="item['Cartridge Type'].includes('Rumble')">
+              <template x-if="item['mapper'].includes('Rumble')">
                 <span style="font-size:1.5rem;">📳</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('Battery')">
+              <template x-if="item['mapper'].includes('Battery')">
                 <span style="font-size:1.5rem;">🔘</span>
               </template>
-              <template x-if="item['Cartridge Type'].includes('Timer')">
+              <template x-if="item['mapper'].includes('Timer')">
                 <span style="font-size:1.5rem;">⏲️</span>
               </template>
             </td>
             <td>
-              <template x-if="item['Region'] === 'INT'">
-                <span style="cursor:help;" title="International">🌎</span>
+              <template x-if="item['destination'] === 'World'">
+                <span style="cursor:help;" title="World">🌎</span>
               </template>
-              <template x-if="item['Region'] === 'JPN'">
+              <template x-if="item['destination'] === 'Japan'">
                 <span style="cursor:help;" title="Japan">🇯🇵</span>
               </template>
             </td>
