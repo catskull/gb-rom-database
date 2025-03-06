@@ -25389,19 +25389,6 @@
     "header": "0C3501CEED6666CCD0B3730830C0D08111F88890EDCCC6EE6DDDDD999BBBB67636EEECCCDDDC999FBBB9333E53555045524D4152494F4C414E4433000034201084F4A5"
   },
   {
-    "name": "Wario Land II (USA, Europe)",
-    "title": "WARIOLAND2",
-    "licensee": "Viacom",
-    "destination": "World",
-    "mapper": "MBC3+RAM+BATTERY",
-    "rom": "1 MiB",
-    "ram": "32 KiB",
-    "sgb": true,
-    "cgb": false,
-    "manufacturer_code": "",
-    "header": "0C3501CEED6666CCD0B3730830C0D08111F88890EDCCC6EE6DDDDD999BBBB67636EEECCCDDDC999FBBB9333E574152494F4C414E443200000030313135313306176A1"
-  },
-  {
     "name": "Waterworld (Europe)",
     "title": "WATER WORLD",
     "licensee": "Ocean",
